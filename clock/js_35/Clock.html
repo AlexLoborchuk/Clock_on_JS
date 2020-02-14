@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>часи зі стрілкою JS</title>
+        <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        #clock{
+            width:700px;
+            height:700px;
+            margin: 50px auto;
+            border: 1px solid brown;
+        }
+        #sec{
+            display: block;
+            margin: 0 auto;
+        }
+        </style>
+        </head>
+        <body>
+            <div id="clock">
+                <img src="sec.png" alt="" id="sec">
+            </div>
+
+            <script> 
+            window.onload = function(){
+                setInterval(fSec,300);
+
+                var sec =0;
+               function fSec(){
+                    document.querySelector("#sec").style.transform = "rotate("+sec+"deg)";
+                    if(sec + 6 == 366){
+                     sec =0;
+                    }
+                    sec =sec + 6;
+               }
+            }    
+            </script>
+        </body>
+        </html>

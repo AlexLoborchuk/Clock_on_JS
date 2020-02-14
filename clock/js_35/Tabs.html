@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<body>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <style>
+       .left, .right{
+           float: left;
+           width: 40%;
+           padding:20px;
+       }
+       .left{
+           background: coral;
+       }
+       .right{
+           background: orange;
+       }
+       </style>
+    </head>
+        <body>
+               <div class="left">Уставший от ухудшающегося мира и от немногословиях своих собратьев, синигами Рюук отправляет на Землю Тетрадь Смерти, наблюдая за тем, что же интересное из этого получится. Его план начинает исполняться, когда Тетрадь Смерти поднимает гениальный ученик старшей школы Лайт Ягами, которому так же наскучил окружающий его мир. Изначально Лайт рассматривал рукопись как чью-то неудавшуюся шутку, но вскоре, экспериментальным путем Лайт открывает правду, написанную в Тетради Смерти. Нужно всего лишь создать изображение человека у себя в уме в тот момент, когда он пишет его имя в Тетради Смерти, и тогда, этот человек умрет через 40 секунд от сердечного приступа. Вооружившись такой невиданной силой, Лайт становится неуловимым убийцей, и он решает сделать этот мир лучше, истребляя криминальных авторитетов и преступников с помощью Тетради Смерти. Вскоре, в интернете и СМИ появляются новости о таинственном "Кира",
+                    который пытается играть в бога.</div>
+               <div class="right">За расследование серии странных убийств, берется загадочный детектив L, который сделает все чтобы остановить Киру. Лайт старается сделать все, что от него зависит, ради того чтобы люди не раскрыли его личность, даже если это будет означать убийство невинных,
+                    которые могут помочь расследованию.</div>
+            <script>
+            window.onload = function(){
+             function equalHeight(){
+                document.querySelector(".left").style.height = "auto";
+               document.querySelector(".right").style.height ="auto";
+                 var left = document.querySelector(".left").offsetHeight;
+                 var right = document.querySelector(".right").offsetHeight;
+               var max = Math.max(left, right);
+               document.querySelector(".left").style.height = max+"px";
+               document.querySelector(".right").style.height = max+"px";
+                console.log(left);
+            }
+            equalHeight();
+            window.onresize =  equalHeight;
+
+            
+              }
+            </script>
+        </body>
+        </html>
