@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Крестики нолики на JS</title>
+        <style>
+            #game{
+                width: 150px;
+                height: 150px;
+                background: rgb(202, 176, 142);
+            }
+            .block{
+                width:50px;
+                height:50px;
+                float: left;
+                border: 1px solid white;
+                box-sizing: border-box;
+                line-height: 50px;
+                text-align: center;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game"></div>
+        <script>
+              
+            for(var  i=0;i<9;i++){
+                document.getElementById("game").innerHTML +='<div class = "block"></div>'; 
+            }
+                var hod = 0;
+            document.getElementById("game").onclick = function (event){
+             //console.log(event);
+              if (event.target.className =="block"){
+                  if(hod%2==0)
+                    event.target.innerHTML ="x"; 
+                else
+                event.target.innerHTML ="O";   
+                hod++;
+                chekWinner() 
+              
+            }
+            }
+            function chekWinner(){
+                var allblock = document.getElementsByClassName("block");
+                if(allblock[0].innerHTML=="x" && allblock[1].innerHTML=="x" && allblock[2].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[3].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[5].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[6].innerHTML=="x" && allblock[7].innerHTML=="x" && allblock[8].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[0].innerHTML=="x" && allblock[3].innerHTML=="x" && allblock[6].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[1].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[7].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[2].innerHTML=="x" && allblock[5].innerHTML=="x" && allblock[8].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[0].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[8].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[2].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[6].innerHTML=="x"){
+                    alert("X - winner");
+                    removeBlock();            
+                }
+               else if(allblock[0].innerHTML=="O" && allblock[1].innerHTML=="O" && allblock[2].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[3].innerHTML=="O" && allblock[4].innerHTML=="O" && allblock[5].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[6].innerHTML=="O" && allblock[7].innerHTML=="O" && allblock[8].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[0].innerHTML=="O" && allblock[3].innerHTML=="O" && allblock[6].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[1].innerHTML=="O" && allblock[4].innerHTML=="O" && allblock[7].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[2].innerHTML=="O" && allblock[5].innerHTML=="O" && allblock[8].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[0].innerHTML=="O" && allblock[4].innerHTML=="O" && allblock[8].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }
+               else if(allblock[2].innerHTML=="O" && allblock[4].innerHTML=="O" && allblock[6].innerHTML=="O"){
+                    alert("O - winner");
+                    removeBlock();            
+                }  
+        
+            }
+            function removeBlock(){
+                    var allblock = document.getElementsByClassName("block");
+                    for (var i =0; i<9; i++){
+                        allblock[i].innerHTML = " ";
+                    }
+                }
+        </script>
+        </body>
+        </html>
